@@ -1,2 +1,4 @@
-*.iml
+.ds_store
 .idea/
+*.iml
+
