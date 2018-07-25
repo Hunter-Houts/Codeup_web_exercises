@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout page</title>
+</head>
+<body>
+<form method="POST" action="">
+    <label for="CardNum">Card Number:</label>
+    <input type="number" id="CardNum" name="CardNum" min="0000000000000000" max="9999999999999999">
+    <br>
+    <label for="expiration">Expiration:</label>
+    <input type="month" id="expiration" name="expiration" required>
+    <br>
+    <label for="secCode">Security Code:</label>
+    <input type="number" id="secCode" name="secCode" min="000" max="999">
+    <label for="Keep">Keep this card on file for future transactions</label>
+    <input type="checkbox" id="Keep" name="Keep">
+    <hr>
+    <button type="submit">Buy Now!</button>
+</form>
+</body>
+</html>
