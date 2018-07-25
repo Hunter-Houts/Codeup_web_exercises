@@ -7,21 +7,21 @@
 <body>
     <form method="POST" action="http://requestbin.net/r/1i2fjq01">
         <label for="email">Email:</label>
-        <input type="email" id="email">
+        <input type="email" id="email" name="email">
         <br>
         <label for="password">Password:</label>
-        <input type="password" id="password">
+        <input type="password" id="password" name="password">
         <br>
 
         <hr>
         <label for="Bio">Bio:</label>
         <textarea name="Bio" id="Bio" cols="30" rows="10" placeholder="Tell us about yourself"></textarea>
         <hr>
-        <label for="hearus">How did you hear about us?</label><br>
-        <input type="radio" value="billboard" id="hearus">Billboard<br>
-        <input type="radio" value="radio advertisement">Radio advertisement<br>
-        <input type="radio" value="internet advertisement">Internet advertisement<br>
-        <input type="radio" value="other">Other<br>
+        <label>How did you hear about us?</label><br>
+        <label for="hearUs1"><input id="hearUs1" type="radio" value="billboard" name="hearAus">Billboard</label><br>
+        <label for="hearUs2"><input id="hearUs2" type="radio" value="radio advertisement" name="hearAus">Radio advertisement</label><br>
+        <label for="hearUs3"><input id="hearUs3" type="radio" value="internet advertisement" name="hearAus">Internet advertisement</label><br>
+        <label for="hearUs4"><input id="hearUs4" type="radio" value="other" name="hearAus">Other</label><br>
         <hr>
         <label for="browser">What web browser are you using?</label>
         <select name="WebBrowser" id="browser">
