@@ -2,17 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Form</title>
+    <title>Forms</title>
 </head>
 <body>
-    <form method="GET" action="/Login"/>
+    <form method="GET" action="/Login">
         <label for="username">Username</label>
         <input type="text" id="username" name="username">
         <br>
 
         <label for="password">Password</label>
-        <input type="password" id="password" name="password">
+        <input type="password" id="password"  name="refresh">
         <br>
+        <input type="hidden" value="HeyLook" name="hidden">
+        <input type="button" value="Submit">
         <button>Submit</button>
+        <br>
+        <textarea>Stuff</textarea>
+        <br>
+        <label for="mango">mango</label>
+        <input type="checkbox" id="mango" checked="on">
+    </form>
 </body>
 </html>
