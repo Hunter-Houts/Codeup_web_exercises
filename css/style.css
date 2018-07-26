@@ -1,0 +1,54 @@
+body {
+    background-color: lightgray;
+}
+p.capitalize, p {
+    text-transform: capitalize;
+    background-color:lightblue;
+    color:darksalmon;
+    /*text-shadow: 0.125em 0.125em #808080; */
+
+    /*text shadow looks so bad, but it's fun*/
+}
+
+strong {
+    background-color: yellow;
+}
+em {
+    text-decoration: underline;
+}
+.beginend {
+    background-color: cornsilk;
+}
+
+#superduper {
+    font-size: 1.7em;
+}
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    animation: opacity 2s ease-in-out infinite;
+    opacity: 1;
+}
+@keyframes opacity {
+    0%{
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.center {
+    background-color: red;
+    animation: murica 2s ease-in-out infinite;
+
+}
+@keyframes murica {
+    0%{ background-color:red; }
+    50% {background-color:white;}
+    100% {background-color: blue;}
+}
+/*perfectly obnoxious*/
