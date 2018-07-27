@@ -9,14 +9,14 @@ body, html {
     --bg-info: #cbdcff;
     --text-info: #583daa;
     --bg-success: #c6f6d9;
-    --text-success: #308b53;
+    --text-success: #308d54;
 }
 
 .message {
     margin: 8px;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid lightgray;
+    border: 1px solid #d3d3d3;
 }
 .message-info {
     color: var(--text-info);
