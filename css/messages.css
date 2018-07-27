@@ -13,11 +13,10 @@ body, html {
 }
 
 .message {
-    border: 1px solid;
     margin: 8px;
     padding: 10px;
     border-radius: 5px;
-    border-color: lightgray;
+    border: 1px solid lightgray;
 }
 .message-info {
     color: var(--text-info);
