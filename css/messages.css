@@ -5,44 +5,32 @@ body, html {
     margin: 0;
     font-family: Arial, Ubuntu, sans-serif;
 }
-
-.message-info {
-    color: #583daa;
-    background-color: #cbdcff;
+.message {
     border: 3px;
     margin: 8px;
     padding: 10px;
     border-radius: 5px;
     border-color: lightgray;
-
+}
+.message-info {
+    color: #583daa;
+    background-color: #cbdcff;
 
 }
 
 .message-success {
     color: #308b53;
     background-color: #c6f6d9;
-    margin: 8px;
-    padding: 10px;
-    border: 3px;
-    border-radius: 5px;
-    border-color: lightgray;
+
 }
 
 .message-warning {
     color: #bdb454;
     background-color: #fbfec3;
-    margin: 8px;
-    padding: 10px;
-    border: 3px;
-    border-radius: 5px;
-    border-color: lightgray;
+
 }
 .message-error {
     color: #a63e50;
     background-color: #ffd1d6;
-    margin: 8px;
-    padding: 10px;
-    border: 3px;
-    border-radius: 5px;
-    border-color: lightgray;
+
 }
