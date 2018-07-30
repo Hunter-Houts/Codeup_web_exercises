@@ -1,0 +1,55 @@
+ul.nav-links {
+    list-style-type: none;
+    margin: 0;
+    margin-bottom: 1em;
+    padding: 0;
+
+
+}
+li {
+    margin: 1em 0 auto;
+    text-align: center;
+    display: block;
+    background-color: gray;
+    padding: 1em;
+    width: calc(95% - 1em);
+
+
+}
+h1 {
+    text-align: center;
+    padding-bottom: 1em;
+    background-color: blue;
+    font-weight: bold;
+    width: 99%;
+
+
+}
+
+div.alert-info {
+    position: relative;
+    text-align: center;
+    border: 0.125em lightgrey solid;
+    margin: auto;
+    background-color: #c0ffff;
+    padding: 1em;
+    width: calc(95% - 1em);
+
+}
+img {
+    width: 99%;
+    height: 95%;
+}
+
+/*Small devices*/
+@media screen and (min-width: 768px) {
+
+}
+/*Medium devices*/
+@media screen and (min-width: 992px) {
+
+}
+/*Large devices (large desktops)*/
+@media screen and (min-width: 1200px){
+
+}
