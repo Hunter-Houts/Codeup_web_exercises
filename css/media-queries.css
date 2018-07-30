@@ -1,3 +1,4 @@
+/*did mobile first approach*/
 ul.nav-links {
     list-style-type: none;
     margin: 0 0 1em;  /* optimized margin, only 1em to bottom */
