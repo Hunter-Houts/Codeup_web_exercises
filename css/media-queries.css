@@ -8,11 +8,12 @@ ul.nav-links {
 }
 li {
     margin: 1em  auto;
+    /*margin-left: 1em;*/
     text-align: center;
     display: block;
     background-color: #cccccc;
-    padding: 1em;
-    width: calc(95% - 1em);
+    padding: 1em 0;
+    /*width: calc(95% - 1em);*/
 
 
 }
@@ -22,7 +23,7 @@ h1 {
     padding-bottom: 1em;
     /*background-color: blue;*/
     font-weight: bold;
-    width: 99%;
+    /*width: 99%;*/
 
 
 }
@@ -34,7 +35,7 @@ div.alert-info {
     margin: auto;
     background-color: #c0ffff;
     padding: 1em;
-    width: calc(95% - 1em);
+    /*width: calc(95% - 1em);*/
 
 }
 div.alert-info>a:link{
@@ -45,7 +46,7 @@ div.alert-info>a:link{
 img {
     display: block;
     margin: 1em auto;
-    width: 97.625%;
+    /*width: 97.625%;*/
     height: 95%;
 }
 #main>h2 {
@@ -59,25 +60,25 @@ footer {
     margin-top: 10em;
 }
 /*Small devices*/
-@media screen and (min-width: 768px) {
+/*@media screen and (min-width: 768px) {*/
 
-}
+/*}*/
 /*Medium devices*/
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 762px) and (max-width: 1200px) {
     h1 {
         /*position: relative;*/
         padding: 0;
         margin: 0;
-        text-align: left;
-        float: right;
+        /*text-align: left;*/
+        /*float: right;*/
     }
     .hidden-on-desktop {
         display: none;
     }
     nav {
         /*position: relative;*/
-        float: right;
-        margin: 0;
+        /*float: right;*/
+        /*margin: 0;*/
     }
 
     li {
@@ -87,12 +88,12 @@ footer {
     }
 
     .sub-section{
-        float:right;
-        width: 50%;
+        /*float:left;*/
+        /*width: 50%;*/
     }
     .main{
-        float: left;
-        width: 50%
+        /*float: right;*/
+        /*width: 50%*/
     }
     footer {
         margin-top: 40em;
@@ -104,15 +105,15 @@ footer {
         /*position: relative;*/
         padding: 0;
         margin: 0;
-        text-align: left;
-        float: right;
+        /*text-align: left;*/
+        /*float: right;*/
     }
     .hidden-on-desktop {
         display: none;
     }
     nav {
         /*position: relative;*/
-        float: right;
+        /*float: right;*/
         margin: 0;
     }
 
@@ -123,12 +124,12 @@ footer {
     }
 
     .sub-section{
-        float:right;
-        width: 50%;
+        /*float:right;*/
+        /*width: 50%;*/
     }
     .main{
-        float: left;
-        width: 50%
+        /*float: left;*/
+        /*width: 50%*/
     }
     footer {
         margin-top: 40em;

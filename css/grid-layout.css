@@ -14,8 +14,6 @@
 .column {
     float: left;
     padding: 10px;
-    background-color: mediumblue;
-    border: 2px solid white;
     box-sizing: border-box;
 }
 .column.one-half {
