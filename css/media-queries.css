@@ -7,7 +7,7 @@ ul.nav-links {
 
 }
 li {
-    margin: 1em 0 auto;
+    margin: 1em  auto;
     text-align: center;
     display: block;
     background-color: #cccccc;
@@ -43,7 +43,9 @@ div.alert-info>a:link{
 
 }
 img {
-    width: 99%;
+    display: block;
+    margin: 1em auto;
+    width: 97.625%;
     height: 95%;
 }
 #main>h2 {
@@ -85,11 +87,11 @@ footer {
     }
 
     .sub-section{
-        float:left;
+        float:right;
         width: 50%;
     }
     .main{
-        float: right;
+        float: left;
         width: 50%
     }
     footer {
@@ -121,11 +123,11 @@ footer {
     }
 
     .sub-section{
-        float:left;
+        float:right;
         width: 50%;
     }
     .main{
-        float: right;
+        float: left;
         width: 50%
     }
     footer {
