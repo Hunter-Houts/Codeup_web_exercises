@@ -2,30 +2,22 @@
 nav {
     z-index: 3;
 }
-.jumbotron>img{
-    /*position: absolute;*/
-    /*width: 100%;*/
-    /*z-index: 1;*/
-    /*top: 5%;*/
-    /*right: 0;*/
-    /*left:0;*/
-    /*bottom: 0;*/
+
+.jumbotron {
+    background-image: url("../img/pizza.png");
 }
-/*.jumbotron {*/
-    /*width: 100%;*/
-/*}*/
 .jumbotron>h1 {
-    position: absolute;
+    /*position: absolute;*/
     text-align: center;
     /*z-index: 2;*/
     background-color: white;
     opacity: 0.5;
     /*margin: 0 auto;*/
-    top: 20%;
-    left: 0;
-    right: 0;
-    padding: .125em;
-    /*width: 100%;*/
+    /*top: 25%;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*padding: .125em;*/
+    width: 100%;
 
 
 
