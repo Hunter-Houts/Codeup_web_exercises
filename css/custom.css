@@ -1,0 +1,35 @@
+/*put the h1 over the img center it and make it slightly transparent*/
+nav {
+    z-index: 3;
+}
+.jumbotron>img{
+    /*position: absolute;*/
+    /*width: 100%;*/
+    /*z-index: 1;*/
+    /*top: 5%;*/
+    /*right: 0;*/
+    /*left:0;*/
+    /*bottom: 0;*/
+}
+/*.jumbotron {*/
+    /*width: 100%;*/
+/*}*/
+.jumbotron>h1 {
+    position: absolute;
+    text-align: center;
+    /*z-index: 2;*/
+    background-color: white;
+    opacity: 0.5;
+    /*margin: 0 auto;*/
+    top: 20%;
+    left: 0;
+    right: 0;
+    padding: .125em;
+    /*width: 100%;*/
+
+
+
+
+
+
+}
