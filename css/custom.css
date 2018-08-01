@@ -5,6 +5,10 @@ nav {
 
 .jumbotron {
     background-image: url("../img/pizza.png");
+    background-size: cover;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
 }
 .jumbotron>h1 {
     /*position: absolute;*/
@@ -24,4 +28,12 @@ nav {
 
 
 
+}
+h3 {
+    padding: 0.5em;
+}
+
+h5 {
+    padding: 0.5em;
+    color: white;
 }
