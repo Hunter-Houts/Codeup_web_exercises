@@ -29,7 +29,7 @@
     width: 12.5%
 }
 @media screen and (max-width: 768px){
-    .column.one-half, .column.one-third, .column.one-fourth, .column.one-eighth{
+    .full, .column.one-half, .column.one-third, .column.one-fourth, .column.one-eighth{
 
         width: 100%;
 
