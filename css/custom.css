@@ -1,7 +1,7 @@
 /*put the h1 over the img center it and make it slightly transparent*/
-/*nav {*/
-    /*z-index: 3;*/
-/*}*/
+nav {
+    z-index: 3;
+}
 
 .jumbotron {
     background-image: url("../img/pizza.png");
