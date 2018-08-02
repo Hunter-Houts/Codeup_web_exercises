@@ -33,13 +33,13 @@
     <h3>Build your own pizza!</h3>
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link active" href="#"><span class="badge badge-dark">1</span> Size and crust</a>
+            <a class="nav-link active" href="#HandTossed"><span class="badge badge-dark">1</span> Size and crust</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="#"><span class="badge badge-dark">2</span> Cheese and Sauce</a>
+            <a class="nav-link active" href="#CheeseSelect"><span class="badge badge-dark">2</span> Cheese and Sauce</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="#"><span class="badge badge-dark">3</span> Toppings</a>
+            <a class="nav-link active" href="#ChooseToppings"><span class="badge badge-dark">3</span> Toppings</a>
         </li>
     </ul>
     <div class="card">
@@ -47,7 +47,7 @@
         <div class="card-body">
 
             <ul class="list-group">
-                <li class="list-group-item bg-light">Hand Tossed</li>
+                <li class="list-group-item bg-light" id="HandTossed">Hand Tossed</li>
                 <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
                 <li class="list-group-item"><div class="form-check">
                     <input class="form-check-input" type="radio" name="Small" id="small" value="small">
@@ -78,7 +78,112 @@
             </ul>
         </div>
     </div>
+    <div class="card">
+        <h5 class="card-title bg-primary">Choose Cheese and Sauce</h5>
+        <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item bg-light">Cheese</li>
+                <li class="list-group-item"><div class="form-group">
+                    <label for="CheeseSelect">How Much?</label>
+                    <br>
+                    <select name="Cheese" id="CheeseSelect">
+                        <option value="Light">Light</option>
+                        <option value="Normal">Normal</option>
+                        <option value="Extra">Extra</option>
+                        <option value="Double">Double</option>
+                    </select>
+                </div></li>
+                <br>
+                <li class="list-group-item bg-light">Sauce</li>
+                <li class="list-group-item"><div class="form-group">
+                    <label for="SauceType">What Type?</label>
+                    <br>
+                    <select name="SauceType" id="SauceType">
+                        <option value="Tomato">Robust Inspired Tomato Sauce</option>
+                        <option value="Marinara">Marinara Sauce</option>
+                        <option value="BBQ">BBQ Sauce</option>
+                        <option value="Alfredo">Alfredo Sauce</option>
+                    </select>
+                </div></li>
+                <li class="list-group-item"><div class="form-group">
+                    <label for="SauceAmt">How Much?</label>
+                    <br>
+                    <select name="SauceAmt" id="SauceAmt">
+                        <option value="LightSauce">Light</option>
+                        <option value="NormalSauce">Normal</option>
+                        <option value="ExtraSauce">Extra</option>
+                    </select>
+                </div></li>
+                <div class="card-footer text-right">
+                    <button class="btn btn-primary">< Previous Step</button>
+                    <button class="btn btn-primary">Next Step ></button>
+                </div>
 
+            </ul>
+        </div>
+    </div>
+    <div class="card">
+        <h5 class="card-title bg-primary">Choose Toppings</h5>
+        <div class="card-body">
+
+            <ul class="list-group">
+                <li class="list-group-item bg-light" id="ChooseToppings">Choose Meats</li>
+                <li class="list-group-item"><div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Beef" id="beef" value="beef">
+                    <label class= "form-check-label" for="beef">
+                        Beef
+                    </label>
+                </div></li>
+                <li class="list-group-item"><div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Ham" id="ham" value="ham">
+                    <label class= "form-check-label" for="ham">
+                       Ham
+                    </label>
+                </div></li>
+                <li class="list-group-item"><div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Philly" id="philly" value="phillySteak">
+                    <label class= "form-check-label" for="philly">
+                        Philly Steak
+                    </label>
+                </div></li>
+                <li class="list-group-item"><div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Bacon" id="bacon" value="bacon">
+                    <label class= "form-check-label" for="bacon">
+                        Bacon
+                    </label>
+                </div></li>
+                <br>
+                <li class="list-group-item bg-light">Choose Non-Meats</li>
+                <li class="list-group-item"><div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="GreenPeppers" id="greenPep" value="GreenPeppers">
+                    <label class= "form-check-label" for="greenPep">
+                        Green Peppers
+                    </label>
+                </div></li>
+                <li class="list-group-item"><div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Mushrooms" id="mushrooms" value="Mushrooms">
+                    <label class= "form-check-label" for="mushrooms">
+                        Mushrooms
+                    </label>
+                </div></li>
+                <li class="list-group-item"><div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Onions" id="onions" value="Onions">
+                    <label class= "form-check-label" for="onions">
+                        Onions
+                    </label>
+                </div></li>
+                <li class="list-group-item"><div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Jalepenos" id="jalepenos" value="Jalepenos">
+                    <label class= "form-check-label" for="jalepenos">
+                        Jalepeño Peppers
+                    </label>
+                </div></li>
+                <div class="card-footer text-right">
+                    <button class="btn btn-primary">Checkout</button>
+                </div>
+            </ul>
+        </div>
+    </div>
 
 </div>
 </body>
