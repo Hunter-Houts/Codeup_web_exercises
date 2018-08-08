@@ -52,7 +52,7 @@ var twoItemsBought = (numOfItemsBought > 2);
 var offerValid = confirm("The offer is still valid?");
 var premiumMember = confirm("Are you a premium member?");
 
-var giveOffer = (offerValid && (twoItemsBought|| premiumMember));
+var giveOffer = (offerValid && (twoItemsBought || premiumMember));
 alert(giveOffer ? "You get the offer!" : "You are not approved for the offer");
 //end of all sections and exercises.
 
