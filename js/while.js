@@ -59,17 +59,32 @@ while(true) {
         break;
     }
 }
-for(var i = 0; i < 50; i++){
 
-    if (i === 0) {
-        console.log("The number to skip is " + userNum);
-    } else if (i === userNum) {
+// for(var i = 0; i < 50; i++){
+//
+//     if (i === 0) {
+//         console.log("The number to skip is " + userNum);
+//     } else if (i === userNum) {
+//         console.log("Yikes! Skipping number: " + userNum);
+//         continue;
+//     } else if (i % 2 !== 0) {
+//         console.log("Here is an odd number: " + i);
+//
+//     } else {
+//         //do nothing
+//     }
+//
+// }
+var i = 0;
+while (i < 50) {
+    if (i === 0) {console.log("The number to skip is " + userNum);}
+    i++;
+    if (i === userNum) {
         console.log("Yikes! Skipping number: " + userNum);
+        continue;
     } else if (i % 2 !== 0) {
         console.log("Here is an odd number: " + i);
 
-    } else {
-        //do nothing
     }
 
 }
