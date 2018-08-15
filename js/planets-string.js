@@ -25,7 +25,7 @@
      */
     var newArry = [];
     for(var i = 0; i < planetsArray.length; i++){
-        newArry.push("<br>");
+        // newArry.push("<br>");
         newArry.push(planetsArray[i]);
         newArry.push("<br>");
     }
