@@ -13,10 +13,15 @@
             background-repeat: no-repeat;
 
         }
+        .center {
+            text-align: center;
+            color: white;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-<h1></h1>
+<h1>Enter Konami Code</h1>
 <audio id="audio"></audio>
 
 <!--enter the jquery-->
@@ -34,6 +39,8 @@
             $('body').addClass("portal");
             $('#audio').attr("src",audio);
             $('#audio').get(0).play();
+            $('h1').text("Still alive by Glad0s");
+            $('h1').addClass("center");
             check = [];
         } else if(check.toString().length === konami.length){
             check = [];
