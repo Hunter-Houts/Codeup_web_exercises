@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Konami</title>
+    <style>
+        .portal {
+            background-image: url("./img/Glados.jpg");
+            background-size: 100%;
+            background-repeat: no-repeat;
+
+        }
+    </style>
+</head>
+<body>
+<h1></h1>
+<audio id="audio"></audio>
+
+<!--enter the jquery-->
+<script src="./js/jquery-2.2.4.js"></script>
+<!--custom js below-->
+<script>
+    "use strict";
+    var audio = "http://66.90.93.122/ost/portal/xrjbyfutnt/Still%20Alive.mp3"
+    var check = [];
+    var konami = "38,38,40,40,37,39,37,39,66,65,13";
+    $(document).keyup(function(event){
+        check.push(event.keyCode)
+        if (check.toString() === konami){
+            alert("You have 30 lives");
+            $('body').addClass("portal");
+            $('#audio').attr("src",audio);
+            $('#audio').get(0).play();
+            check = [];
+        } else if(check.toString().length === konami.length){
+            check = [];
+        }
+    });
+
+
+</script>
+</body>
+</html>
