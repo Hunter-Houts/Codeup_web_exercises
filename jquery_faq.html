@@ -44,7 +44,7 @@
 </dl>
 <button>Hide/Show Facts</button>
 <!--SHOUT OUT TO: https://www.dosomething.org/us/facts/11-facts-about-national-parks for the FACTS!-->
-
+<hr>
 <!--Source for facts : https://www.softschools.com/facts/national_parks/wrangell_st_elias_national_park_facts/2961/-->
 <h3>Wrangell-St. Elias National Park</h3>
 <ul>
@@ -69,7 +69,7 @@
     <li>The park has a Subway, but it’s not a form of public transportation.</li>
     <li>Zion has one of the largest freestanding arches in the world. </li>
 </ul>
-
+<button id="changeLast">Highlight last fact in all!</button>
 
 <!--add JQUERY-->
 <script src="./js/jquery-2.2.4.js"></script>
@@ -83,6 +83,12 @@
         event.preventDefault();
         $('dd').toggleClass('invisible');
     });
+    $("#changeLast").click(function(){
+        $("ul").each(function(index, element){
+            $(element).children().last().css("background-color","yellow")
+        });
+    });
+
 
 
 
