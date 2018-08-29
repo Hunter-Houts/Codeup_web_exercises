@@ -92,7 +92,7 @@
         $(this).next().children().css("font-weight","bold");
     });
     $('li').click(function(){
-        $(this).parent().css("color","blue");
+        $(this).parent().children().first().css("color","blue");
     });
 
 
