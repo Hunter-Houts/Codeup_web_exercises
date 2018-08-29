@@ -16,10 +16,17 @@
         .highlighted{
             background-color: yellow;
         }
+        #newsletter{
+            text-align: center;
+            font-size: 0.5em;
+            border: 2px solid black;
+            margin-left: 30em;
+            margin-right: 30em;
+        }
     </style>
 </head>
 <body>
-<div id="newsletter"><h1>Would you like to sign up for our newsletter?<sup><span id="X">X</span></sup></h1></div>
+<div id="newsletter"><h1>Would you like to sign up for our newsletter?<sup><span id="X" style="font-size: 1em;">X</span></sup></h1></div>
 <center><h1>National Park FAQ</h1></center>
 <dl>
     <dt>How many sites are in the National Park System?</dt>
@@ -98,7 +105,11 @@
     $("#X").click(function(){
         $("#newsletter").hide();
     });
-
+    $('h3').next().hide();
+    $('h3').click(function(){
+        $(this).next().slideToggle();
+    })
+    $("#X").hover(function(){$(this).css('color','red')},function(){$(this).css('color','black')})
 
 </script>
 </body>
