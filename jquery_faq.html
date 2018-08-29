@@ -19,6 +19,7 @@
     </style>
 </head>
 <body>
+<div id="newsletter"><h1>Would you like to sign up for our newsletter?<sup><span id="X">X</span></sup></h1></div>
 <center><h1>National Park FAQ</h1></center>
 <dl>
     <dt>How many sites are in the National Park System?</dt>
@@ -94,7 +95,9 @@
     $('li').click(function(){
         $(this).parent().children().first().css("color","blue");
     });
-
+    $("#X").click(function(){
+        $("#newsletter").hide();
+    });
 
 
 </script>
