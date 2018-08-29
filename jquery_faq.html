@@ -42,7 +42,7 @@
     <dt>What big things are in National Parks?</dt>
     <dd>The largest living things in the world are in National Parks: Sequoia trees and Alaskan brown bears (the world’s largest living carnivores).</dd>
 </dl>
-<button>Hide/Show Facts</button>
+<button id="showhide">Hide/Show Facts</button>
 <!--SHOUT OUT TO: https://www.dosomething.org/us/facts/11-facts-about-national-parks for the FACTS!-->
 <hr>
 <!--Source for facts : https://www.softschools.com/facts/national_parks/wrangell_st_elias_national_park_facts/2961/-->
@@ -79,7 +79,7 @@
     $('dt').click(function(event){
         $(this).toggleClass("highlighted")
     });
-    $("button").click(function(event){
+    $("#showhide").click(function(event){
         event.preventDefault();
         $('dd').toggleClass('invisible');
     });
