@@ -12,8 +12,12 @@
 </head>
 <body>
 <div class="container">
+    <div class="row"> <h3 class="header">Weather application</h3></div>
+    <div class="row"><div id="cityName" class="col-12 fancy-header"></div></div>
     <div class="row">
-        <div id="info" class="col-12"></div>
+        <div id="info" class="col-4 card"></div>
+        <div id="day2" class="col-4 card"></div>
+        <div id="day3" class="col-4 card"></div>
     </div>
 
 
@@ -32,11 +36,65 @@
         q:     "San Antonio, US",
         units: "imperial"
     }).done(function(data){
+        //looking through the data
+        console.log(data);
         console.log(data.list);
-        console.log(data.list[0].dt_txt)
-        $("#info").append(data.list[0].dt_txt + " ")
-        $("#info").append(data.list[0].weather[0].main)
-            console.log(data.list[0].main.temp)
+        console.log(data.list[0].dt_txt);
+        console.log(data.list[0].main.temp);
+        //find the min and max temp for the whole day
+        function minMaxTemp(data, index){
+            //set max temp to something lower than expected ever.
+            //set min temp to something higher than expected ever.
+            var maxTemp = -1000;
+            var minTemp = 1000;
+            //start on index where day starts
+            var start = index;
+            //end on index where day ends, which is always 8 from the start
+            var end = start + 8;
+            //iterate through the temps and set max/min temp to the highest/lowest values in the day
+            for(var i = start; i < end; i++){
+                //use second loop to make sure we don't compare the same data.
+                for(var j = start; j < end; j++){
+                    if (i !== j && data.list[i].main.temp_max > maxTemp){
+                        maxTemp = data.list[i].main.temp_max;
+                    }
+                    if (i !== j && data.list[i].main.temp_min < minTemp){
+                        minTemp = data.list[i].main.temp_min;
+                    }
+                }
+            }
+            if(maxTemp !== -1000 && minTemp !== 1000) {
+                console.log("THIS WAS A TRIUMPH");
+                return maxTemp.toFixed() + "°/" + minTemp.toFixed() + "°";
+            } else {
+                console.log("making a note here: '!huge success'");
+            }
+        }
+        // function to get weather and description for different days
+        function getWeather(data, index){
+            var info = '';
+            info += data.list[index].weather[0].main + ": " + data.list[index].weather[0].description + "<br/>"
+            info += "Humidity: " + data.list[index].main.humidity + "<br/>"
+
+        }
+        //filling city name with info
+        $("#cityName").append(data.city.name);
+        // $("#info").append(data.list[0].dt_txt + " ")
+        //first card start
+
+        $("#info").append(minMaxTemp(data, 0) + "<br/>");
+        $("#info").append();
+        $("#info").append(getWeather(data, 0));
+        //first card end
+        //second card start
+        $("#day2").append(minMaxTemp(data, 8) + "<br/>");
+        $("#day2").append(getWeather(data, 8));
+        //second card end
+        //third card start
+        $("#day3").append(minMaxTemp(data, 16) + "<br/>");
+        $("#day3").append(getWeather(data, 16));
+        //third card end
+
     });
 </script>
 <!--Custom Javascript end-->
