@@ -73,8 +73,11 @@
         // function to get weather and description for different days
         function getWeather(data, index){
             var info = '';
-            info += data.list[index].weather[0].main + ": " + data.list[index].weather[0].description + "<br/>"
-            info += "Humidity: " + data.list[index].main.humidity + "<br/>"
+            info += data.list[index].weather[0].main + ": " + data.list[index].weather[0].description + "<br/>";
+            info += "Humidity: " + data.list[index].main.humidity + "<br/>";
+            info += "Wind: " + data.list[index].wind.speed + "<br/>"
+            info += "Pressure: " + data.list[index].main.pressure;
+            return info;
 
         }
         //filling city name with info
