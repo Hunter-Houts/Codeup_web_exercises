@@ -11,13 +11,13 @@
     <!--Bootstrap css end-->
 </head>
 <body>
-<div class="container">
+<div style= "background-color: #9ed8fb;" class="container">
     <div class="row"> <h3 class="header">Weather application</h3></div>
     <div class="row"><div id="cityName" class="col-12 fancy-header"></div></div>
     <div class="row">
-        <div id="info" class="col-4 card"></div>
-        <div id="day2" class="col-4 card"></div>
-        <div id="day3" class="col-4 card"></div>
+        <div id="info" class="col-4 card bg-light"></div>
+        <div id="day2" class="col-4 card bg-light"></div>
+        <div id="day3" class="col-4 card bg-light"></div>
     </div>
 
 
@@ -73,28 +73,23 @@
         // function to get weather and description for different days
         function getWeather(data, index){
             var info = '';
-            info += data.list[index].weather[0].main + ": " + data.list[index].weather[0].description + "<br/>";
-            info += "Humidity: " + data.list[index].main.humidity + "<br/>";
-            info += "Wind: " + data.list[index].wind.speed + "<br/>"
-            info += "Pressure: " + data.list[index].main.pressure;
+            info += "<div style='font-size: 1.5em;' class='text-center font-weight-bold'>" + minMaxTemp(data, index) + "</div>";
+            info += "<div class='text-center'>" + "<span class='font-weight-bold'>" + data.list[index].weather[0].main + "</span>: " + data.list[index].weather[0].description + "</div>";
+            info += "<div class='text-center'>" + "<span class='font-weight-bold'>Humidity: </span>" + data.list[index].main.humidity + "</div>";
+            info += "<div class='text-center'>" + "<span class='font-weight-bold'>Wind: </span>" + data.list[index].wind.speed + "</div>"
+            info += "<div class='text-center'>" + "<span class='font-weight-bold'>Pressure: </span>" + data.list[index].main.pressure + "</div>";
             return info;
 
         }
         //filling city name with info
         $("#cityName").append(data.city.name);
-        // $("#info").append(data.list[0].dt_txt + " ")
         //first card start
-
-        $("#info").append(minMaxTemp(data, 0) + "<br/>");
-        $("#info").append();
         $("#info").append(getWeather(data, 0));
         //first card end
         //second card start
-        $("#day2").append(minMaxTemp(data, 8) + "<br/>");
         $("#day2").append(getWeather(data, 8));
         //second card end
         //third card start
-        $("#day3").append(minMaxTemp(data, 16) + "<br/>");
         $("#day3").append(getWeather(data, 16));
         //third card end
 
