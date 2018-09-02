@@ -45,7 +45,7 @@
         function findStart(data,index){
             var start = index;
             for(var i = index; i < data.list.length; i++) {
-                if (/00:00:00/gm.test(data.list[i].dt_txt)) {
+                if (/00:00:00/gm.test(data.list[i].dt_txt)) { //uses RegEx to find the start of the day.
                     return start = i;
                 }
             }
@@ -53,13 +53,14 @@
         function findEnd(data, index){
             var end = 0;
             for(var i = index; i < data.list.length; i++){
-                if(/21:00:00/gm.test(data.list[i].dt_txt)){
+                if(/21:00:00/gm.test(data.list[i].dt_txt)){ //uses RegEx to find end of day.
                     return end = i;
                 }
             }
         }
         console.log(findStart(data,0));
-        console.log(findEnd(data, 2));
+        var day2 = findStart(data, 0); //should find the next day after the current
+
         function minMaxTemp(data, index){
             //set max temp to something lower than expected ever.
             //set min temp to something higher than expected ever.
@@ -70,19 +71,16 @@
             if(start !== 0){
                 start = findStart(data,index);
             }
-            //end on index where day ends, which is always 8 from the start
+            //end on index where day ends.
             var end = findEnd(data,start);
             //iterate through the temps and set max/min temp to the highest/lowest values in the day
             for(var i = start; i <= end; i++){
-                //use second loop to make sure we don't compare the same data.
-                // for(var j = start; j < end; j++){
                     if (data.list[i].main.temp_max >= maxTemp){
                         maxTemp = data.list[i].main.temp_max;
                     }
                     if (data.list[i].main.temp_min <= minTemp){
                         minTemp = data.list[i].main.temp_min;
                     }
-                // }
             }
             if(maxTemp !== -1000 && minTemp !== 1000) {
                 console.log("THIS WAS A TRIUMPH");
@@ -91,7 +89,7 @@
                 console.log("making a note here: '!huge success'");
             }
         }
-        console.log(minMaxTemp(data,8));
+
         // function to get weather and description for different days
         function getWeather(data, index){
             var info = '';
@@ -106,13 +104,13 @@
         //filling city name with info
         $("#cityName").append(data.city.name);
         //first card start
-        $("#info").append(getWeather(data, 0));
+        $("#info").append(getWeather(data, 0)); //Gives weather for current day at time it's looked at to end of day.
         //first card end
         //second card start
-        $("#day2").append(getWeather(data, 8));
+        $("#day2").append(getWeather(data, day2)); //Gives weather for the next day
         //second card end
         //third card start
-        $("#day3").append(getWeather(data, 16));
+        $("#day3").append(getWeather(data, findEnd(data,day2))); //finds the end of day2 then uses that index to look for day 3 start in minMaxTemp function.
         //third card end
 
     });
