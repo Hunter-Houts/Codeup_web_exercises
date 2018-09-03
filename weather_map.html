@@ -103,6 +103,7 @@
         function getWeather(data, index){
             var info = '';
             info += "<div style='font-size: 1.5em;' class='text-center font-weight-bold'>" + minMaxTemp(data, index) + "</div>";
+            info += "<img style='width:50px; height:50px;' class='mx-auto' src='https://openweathermap.org/img/w/" +  data.list[index].weather[0].icon.replace('n','d') +".png" + "'/>";
             info += "<div class='text-center'>" + "<span class='font-weight-bold'>" + data.list[index].weather[0].main + "</span>: " + data.list[index].weather[0].description + "</div>";
             info += "<div class='text-center'>" + "<span class='font-weight-bold'>Humidity: </span>" + data.list[index].main.humidity + "</div>";
             info += "<div class='text-center'>" + "<span class='font-weight-bold'>Wind: </span>" + data.list[index].wind.speed + "</div>"
@@ -116,10 +117,10 @@
         $("#info").html(getWeather(data, 0)); //Gives weather for current day at time it's looked at to end of day.
         //first card end
         //second card start
-        $("#day2").html(getWeather(data, day2)); //Gives weather for the next day
+        $("#day2").html(getWeather(data, findStart(data,day2))); //Gives weather for the next day
         //second card end
         //third card start
-        $("#day3").html(getWeather(data, findEnd(data,day2))); //finds the end of day2 then uses that index to look for day 3 start in minMaxTemp function.
+        $("#day3").html(getWeather(data, findStart(data,findEnd(data,day2)))); //finds the end of day2 then uses that index to look for day 3 start
         //third card end
 
         //Map Start
