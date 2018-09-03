@@ -19,7 +19,10 @@
         <div id="day2" class="col-4 card bg-light"></div>
         <div id="day3" class="col-4 card bg-light"></div>
     </div>
-
+    <div class="row">
+        <div style="width: 770px;
+            height: 481px;" id="map" class="col-12"></div>
+    </div>
 
 
 </div>
@@ -29,11 +32,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <!--Bootstrap end-->
+<!--google maps start-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGYV5YFJ6NFIwZ6U4aHLqng3vJVawspHc"></script>
+<!--google maps end-->
 <!--Custom Javascript start-->
 <script>
-    $.get("http://api.openweathermap.org/data/2.5/forecast?id=524901", {
+    function renderData(lat, lon){
+    $.get("http://api.openweathermap.org/data/2.5/forecast", {
         APPID: localStorage.weatherapikey,
-        q:     "San Antonio, US",
+        lat:    lat,
+        lon:   lon,
         units: "imperial"
     }).done(function(data){
         //looking through the data
@@ -103,18 +111,45 @@
 
         }
         //filling city name with info
-        $("#cityName").append(data.city.name);
+        $("#cityName").html(data.city.name);
         //first card start
-        $("#info").append(getWeather(data, 0)); //Gives weather for current day at time it's looked at to end of day.
+        $("#info").html(getWeather(data, 0)); //Gives weather for current day at time it's looked at to end of day.
         //first card end
         //second card start
-        $("#day2").append(getWeather(data, day2)); //Gives weather for the next day
+        $("#day2").html(getWeather(data, day2)); //Gives weather for the next day
         //second card end
         //third card start
-        $("#day3").append(getWeather(data, findEnd(data,day2))); //finds the end of day2 then uses that index to look for day 3 start in minMaxTemp function.
+        $("#day3").html(getWeather(data, findEnd(data,day2))); //finds the end of day2 then uses that index to look for day 3 start in minMaxTemp function.
         //third card end
 
-    });
+        //Map Start
+        function initMap() {
+            var myLatlng = new google.maps.LatLng(lat,lon);
+
+            var map = new google.maps.Map(
+                document.getElementById('map'), {zoom: 5, center: myLatlng});
+
+            placeMarkerAndPanTo(myLatlng,map)
+        }
+        function placeMarkerAndPanTo(latLng, map) {
+            var marker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                draggable: true
+            });
+            map.panTo(latLng);
+            var markerListener = marker.addListener('dragend', function () {
+                var lat = marker.getPosition().lat();
+                var lng = marker.getPosition().lng();
+                renderData(lat, lng);
+            });
+        }
+        //map end
+        initMap();
+
+    });};
+    renderData(29.426791, -98.489602);
+
 </script>
 <!--Custom Javascript end-->
 </body>
