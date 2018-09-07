@@ -41,3 +41,6 @@ console.log(users.map(user => {return user.email}));
 console.log(users.reduce((years, currentNumber) => {return years + currentNumber.yearsOfExperience/ users.length;},0));
 console.log(users.reduce((total, user) =>{if (user.email.length > total){total = user.email.length;} return total},0));
 console.log(users.reduce((total, user) => {total +=  user.name + " "; return total},"Your instructors are: "));
+let languages = [];
+users.reduce((total, user) => {languages.push(user.name + ": " + user.languages.toString())})
+console.log(languages);
