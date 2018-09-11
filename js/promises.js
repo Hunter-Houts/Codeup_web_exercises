@@ -13,6 +13,11 @@ wait(2000).then(() => console.log("Should see this after 2 seconds")).catch((err
 
 
 
-fetch("https://api.github.com/repos/Hunter-Houts/codeup-web-exercises/commits?path=js", {headers: {'Authorization': 'token ae14accc8611a775dceb9c748c0a97aedb184b1d'}})
-    .then(response => console.log(response.json())).then();
+let lastUserCommit = () => {
+return fetch("https://api.github.com/users/Hunter-Houts/events",{headers: {'Authorization': 'token  818f8ca3a16b43d5972f86146a4dda711d1b3e4e'}})
+    .then(response => response.json())
+    .then(e => e[0].created_at)
+    .catch(error => console.log(error))};
+
+lastUserCommit().then(data => data).then(date => console.log(date));
 
